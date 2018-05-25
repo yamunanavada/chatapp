@@ -2,7 +2,7 @@ import React from "react";
 import {ActionCable} from 'react-actioncable-provider'
 import {API_ROOT} from '../constants'
 import NewConversationForm from './NewConversationForm'
-import MessageArea from './MessageArea'
+import MessagesArea from './MessagesArea'
 import Cable from './Cable'
 
 class ConversationsList extends React.Component {
@@ -13,7 +13,11 @@ class ConversationsList extends React.Component {
 
   componentDidMount = () => {
     fetch(`${API_ROOT}/conversations`)
-      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        debugger
+        return res
+      })
       .then(conversations => this.setState({ conversations }));
   };
 

@@ -6,6 +6,7 @@ const MessagesArea = ({
 }) => {
   return (
     <div className="messagesArea">
+      <h1>This is the messages area</h1>
       <h2>{title}</h2>
       <ul>{orderedMessages(messages)}</ul>
       <NewMessageForm conversation_id={id} />
